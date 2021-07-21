@@ -1,0 +1,14 @@
+server:
+  port: 8081
+#person:
+#  id: 1001
+#  name: tom
+#  hobby: [ read,slppe ]
+#  family: [ fa,ma ]
+#  map: { k1: v2,k2: v2 }
+#  pet: { name: zhangSan,type: dog }
+
+# springboot设置随机值参数
+person:
+  id: ${random.int(1,100)}
+  name: tom 的年龄可能是${person.id}

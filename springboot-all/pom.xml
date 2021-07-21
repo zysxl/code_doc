@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>spring-all-common</module>
+        <module>spring-admin</module>
+        <module>spring-mq</module>
+    </modules>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.springall</groupId>
+    <artifactId>springboot-all</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>spring-all</name>
+    <description>spring集合maven管理包</description>
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <!--springCloud版本控制-->
+        <spring.cloud.version>Hoxton.SR9</spring.cloud.version>
+        <!--springCloudAlibaba版本控制-->
+        <alibaba-cloud.version>2.2.6.RELEASE</alibaba-cloud.version>
+        <!-- 项目依赖版本 -->
+        <spring.all.verison>1.0-SNAPSHOT</spring.all.verison>
+        <!--rocketmq版本-->
+        <spring.rocketmq.verison>4.5.1</spring.rocketmq.verison>
+    </properties>
+
+    <!--版本控制-->
+    <dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>${spring.cloud.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+            <version>${alibaba-cloud.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.springall</groupId>
+            <artifactId>spring-all-common</artifactId>
+            <version>${spring.all.verison}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.springall</groupId>
+            <artifactId>spring-admin-api</artifactId>
+            <version>${spring.all.verison}</version>
+        </dependency>
+        <!--rocketmq-->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>${spring.rocketmq.verison}</version>
+        </dependency>
+    </dependencies>
+    </dependencyManagement>
+</project>
